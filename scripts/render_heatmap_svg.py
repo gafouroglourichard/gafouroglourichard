@@ -15,9 +15,9 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "contributions.json"
 OUT = ROOT / "assets" / "contrib-heatmap.svg"
 
-NAVY, PANEL, LINE = "#0f1923", "#16222e", "#2a3a4a"
-RED, CREAM, MUTED, TEAL = "#ff4655", "#ece8e1", "#8b97a5", "#17e8b0"
-PALETTE = ["#1c2833", "#4a1f2a", "#7d2533", "#b8303f", "#ff4655", "#ff9aa2"]
+NAVY, PANEL, LINE = "#161b22", "#1c2128", "#30363d"
+RED, CREAM, MUTED, TEAL = "#39d353", "#e6edf3", "#8b949e", "#7ee787"
+PALETTE = ["#2d333b", "#0e4429", "#006d32", "#26a641", "#39d353", "#7ee787"]
 MONO = "'JetBrains Mono','Cascadia Code','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace"
 STATIC = os.environ.get("STATIC") == "1"
 
