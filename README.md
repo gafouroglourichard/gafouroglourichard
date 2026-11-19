@@ -7,7 +7,7 @@
 <a href="https://richard-portfolio-2026-27.vercel.app/"><img src="./assets/btn-portfolio.svg" width="24%" alt="Portfolio" /></a>
 <a href="https://www.linkedin.com/in/richard-gafouroglou-040084389"><img src="./assets/btn-linkedin.svg" width="24%" alt="LinkedIn" /></a>
 <a href="https://richard-portfolio-2026-27.vercel.app/Gafouroglou_Richard_CV_AI_Engineer_EN.pdf"><img src="./assets/btn-cv.svg" width="24%" alt="CV (English)" /></a>
-<a href="mailto:gricsi12@icloud.com"><img src="./assets/btn-email.svg" width="24%" alt="Email" /></a>
+<a href="https://richard-portfolio-2026-27.vercel.app/Gafouroglou_Richard_CV_AI_Engineer_HU.pdf"><img src="./assets/btn-cv-hu.svg" width="24%" alt="CV (Hungarian)" /></a>
 
 <br><br>
 
