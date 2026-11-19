@@ -32,8 +32,16 @@ jobs:
 
       - name: Add dark background
         run: |
-          sed -i -E '0,/<svg[^>]*>/s//&<rect x="-500" y="-500" width="5000" height="5000" fill="#161b22"\/>/' assets/snake.svg
-          grep -c '#161b22' assets/snake.svg
+          python3 - <<'PY'
+          import re
+          p = "assets/snake.svg"
+          s = open(p, encoding="utf-8").read()
+          m = re.search(r'viewBox="([-\d.\s]+)"', s)
+          x, y, w, h = (float(v) for v in m.group(1).split())
+          rect = f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="12" fill="#161b22"/>'
+          s = re.sub(r'(<svg[^>]*>)', lambda mo: mo.group(1) + rect, s, count=1)
+          open(p, "w", encoding="utf-8").write(s)
+          PY
 
       - name: Commit the snake
         uses: stefanzweifel/git-auto-commit-action@v5
