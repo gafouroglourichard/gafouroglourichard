@@ -255,7 +255,7 @@ def make_header() -> None:
     <g class="in d4">
       <circle cx="46" cy="201" r="4.5" fill="{TEAL}" class="pulse"/>
       <text x="58" y="205" class="ok">OPEN TO WORK · REMOTE / HYBRID</text>
-      <text x="{W - 40}" y="205" text-anchor="end" class="meta">HU · EN · DE · EL</text>
+      <text x="{W - 40}" y="205" text-anchor="end" class="meta">HU · EN · DE · GR</text>
     </g>
 
     {spin_cube(770, 112)}
@@ -614,7 +614,7 @@ BUTTONS = [
     ("btn-portfolio.svg", "PORTFOLIO"),
     ("btn-linkedin.svg", "LINKEDIN"),
     ("btn-cv.svg", "CV · EN"),
-    ("btn-email.svg", "EMAIL"),
+    ("btn-cv-hu.svg", "CV · HU"),
 ]
 
 
