@@ -1,0 +1,37 @@
+name: Contribution snake
+
+on:
+  schedule:
+    - cron: "41 4 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/snake.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-writes
+  cancel-in-progress: false
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate the snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            assets/snake.svg?color_snake=#17e8b0&color_dots=#3d4b5c,#7a2c38,#b3303f,#e53e4f,#ff4655
+
+      - name: Commit the snake
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update contribution snake [skip ci]"
+          file_pattern: assets/snake.svg
