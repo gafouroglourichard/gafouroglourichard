@@ -111,6 +111,11 @@
 <h3><code>richard@github ~ $ ./contributions.sh</code></h3>
 <img src="./assets/contrib-heatmap.svg" width="860" alt="GitHub contribution heatmap, refreshed daily" />
 
+<br><br>
+
+<h3><code>richard@github ~ $ ./snake.sh</code></h3>
+<img src="./assets/snake.svg" width="860" alt="A snake eating my GitHub contributions" />
+
 </div>
 
 <br>
