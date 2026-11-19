@@ -119,9 +119,9 @@
 
 ### `$ cat now.md`
 
-- [x] Sell ManagAI and hand it over to its new owner
+- [x] Sold ManagAI and hand it over to its new owner
 - [x] Put a 14-agent system into production at ZERO GROUP
-- [ ] Rebuild 4MA from scratch as a self-hosted SaaS with 4 pricing tiers
+- [ ] Rebuild 4MA from scratch as a self-hosted SaaS with 4 pricing tiers and installation
 - [ ] Launch a new AI venture for EU &amp; US markets in 2027
 
 > [!TIP]
