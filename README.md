@@ -99,11 +99,11 @@
 
 <h3><code>richard@github ~ $ cat stack.txt</code></h3>
 
-<img src="https://skillicons.dev/icons?i=python,ts,go,nextjs,react,supabase,postgres,docker,kubernetes,vercel,aws,azure,gcp,linux&perline=7" alt="Tech stack" />
+<img src="https://skillicons.dev/icons?i=python,ts,go,nextjs,react,supabase,postgres,docker,kubernetes,vercel,aws,azure,aiscript,blender,bun,cloudflare,coffeescript,discord,electron,fastapi,figma,git,github,gmail,html,ai,java,js,linkedin,linux,nodejs,npm,planetscale,postman,powershell,sqlite,vite,windows,,gcp,linux&perline=7" alt="Tech stack" />
 
 <br><br>
 
-<sub>learning →</sub>&nbsp;
+<sub>Next project with: →</sub>&nbsp;
 <img src="https://skillicons.dev/icons?i=rust,angular" height="34" alt="Rust, Angular" />
 
 <br><br>
