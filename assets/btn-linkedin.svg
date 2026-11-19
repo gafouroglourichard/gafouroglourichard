@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="44" viewBox="0 0 200 44" role="img" aria-label="Linkedin">
+  <title>Linkedin</title>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <clipPath id="c"><polygon points="10,0 200,0 200,34 190,44 0,44 0,10"/></clipPath>
+  </defs>
+  <style>
+    .t{font:700 13px 'JetBrains Mono','Cascadia Code','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;letter-spacing:2.5px;fill:#ece8e1}
+    
+    .b{opacity:0;animation:pop .5s cubic-bezier(.2,1.4,.4,1) 0.27s forwards}
+    @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .sw{animation:sw 4s ease-in-out 1.80s infinite}
+    @keyframes sw{0%{transform:translateX(-90px)}35%,100%{transform:translateX(300px)}}
+    
+  </style>
+  <g class="b">
+    <g clip-path="url(#c)">
+      <rect width="200" height="44" fill="#0f1923"/>
+      <rect width="5" height="44" fill="#ff4655"/>
+      <rect class="sw" width="60" height="44" fill="url(#g)" transform="skewX(-20)"/>
+    </g>
+    <polygon points="10,.75 199.25,.75 199.25,34 190,43.25 .75,43.25 .75,10" fill="none" stroke="#ff4655" stroke-width="1.5"/>
+    <text x="102.0" y="27" text-anchor="middle" class="t">LINKEDIN <tspan fill="#ff4655">↗</tspan></text>
+  </g>
+</svg>

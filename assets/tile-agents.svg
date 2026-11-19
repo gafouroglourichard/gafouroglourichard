@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="150" viewBox="0 0 280 150" role="img" aria-label="14 agents in production">
+  <title>14 agents in production</title>
+  <defs>
+    <linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".09"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <clipPath id="cc"><rect width="280" height="150" rx="10"/></clipPath>
+  </defs>
+  <style>
+    .num{font:800 54px 'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;fill:#ece8e1;letter-spacing:1px}
+    .suf{fill:#ff4655}
+    .lbl{font:700 11px 'JetBrains Mono','Cascadia Code','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;letter-spacing:1.8px;fill:#ece8e1}
+    .sub{font:500 11px 'JetBrains Mono','Cascadia Code','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;fill:#8b97a5}
+    
+    .card{opacity:0;transform-origin:20px 150px;animation:swing .9s cubic-bezier(.2,1.5,.4,1) 0.2s forwards}
+    @keyframes swing{0%{opacity:0;transform:translateY(46px) rotate(-7deg)}60%{opacity:1}100%{opacity:1;transform:none}}
+    .shine{animation:shine 5s ease-in-out 2.20s infinite}
+    @keyframes shine{0%{transform:translateX(-160px)}30%,100%{transform:translateX(440px)}}
+    .ring{transform-origin:263px 15px;animation:ring 2.4s ease-out 1.20s infinite}
+    @keyframes ring{0%{transform:scale(.3);opacity:.9}100%{transform:scale(2.2);opacity:0}}
+    .arrow{animation:nudge 1.8s ease-in-out infinite}
+    @keyframes nudge{50%{transform:translate(3px,-3px)}}
+    
+  </style>
+  <g class="card">
+    <g clip-path="url(#cc)">
+      <rect width="280" height="150" fill="#0f1923"/>
+      <polygon points="234,0 280,0 280,46" fill="#ff4655"/>
+      <rect class="shine" x="0" y="0" width="120" height="150" fill="url(#sh)" transform="skewX(-18)"/>
+      <rect x="0" y="147" width="280" height="3" fill="#ff4655" opacity=".8"/>
+    </g>
+    <rect x=".5" y=".5" width="279" height="149" rx="10" fill="none" stroke="#2a3a4a"/>
+    <circle class="ring" cx="263" cy="15" r="7" fill="none" stroke="#ece8e1" stroke-width="1.5" opacity="0"/>
+    <text x="264" y="20" text-anchor="middle" class="lbl arrow" style="fill:#0f1923;font-size:13px">↗</text>
+    <text x="24" y="86" class="num" visibility="hidden">0<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="0.750s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">2<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="0.800s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">3<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="0.850s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">5<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="0.900s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">6<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="0.950s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">8<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.000s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">9<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.050s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">10<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.100s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">10<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.150s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">11<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.200s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">12<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.250s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">12<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.300s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">13<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.350s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">13<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.400s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">13<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.450s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">14<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.500s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">14<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.550s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">14<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.600s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">14<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.650s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">14<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.700s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">14<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.750s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">14<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.800s" dur="0.051s"/></text><text x="24" y="86" class="num" visibility="hidden">14<tspan class="suf"></tspan><set attributeName="visibility" to="visible" begin="1.850s"/></text>
+    <text x="24" y="112" class="lbl">AGENTS IN PRODUCTION</text>
+    <text x="24" y="131" class="sub">4MA OS at ZERO GROUP</text>
+  </g>
+</svg>
