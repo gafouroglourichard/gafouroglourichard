@@ -11,14 +11,6 @@
 
 <br><br>
 
-<h3><code>richard@github ~ $ ./play portfolio.mp4</code></h3>
-
-<a href="https://richard-portfolio-2026-27.vercel.app/assets/07-FINAL-VIDEOS/portfolio-v4-en.mp4"><img src="./assets/media/portfolio-teaser.webp" width="860" alt="Teaser of my 3-minute portfolio video: real screens from the systems I built" /></a>
-
-<sub>Real screenshots, client data masked · click to watch the full 3-minute video</sub>
-
-<br><br>
-
 <a href="#4ma-os--agents--orchestrator"><img src="./assets/tile-agents.svg" width="32.5%" alt="14 agents in production" /></a>
 <a href="#4ma-os--agents--orchestrator"><img src="./assets/tile-autonomy.svg" width="32.5%" alt="95% of routine tasks run on their own" /></a>
 <a href="#modules-running-on-4ma"><img src="./assets/tile-leads.svg" width="32.5%" alt="131 leads since full automation" /></a>
