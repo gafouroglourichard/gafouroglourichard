@@ -190,17 +190,17 @@ def make_header() -> None:
 INFO = [
     ("", "richard@github"),
     ("", "--------------"),
-    ("Role", "AI Engineer · Forward Deployed · Full-Stack"),
-    ("Focus", "Multi-agent systems, automation, AI SaaS"),
-    ("Now", "Building 4MA — 14-agent orchestration OS"),
-    ("Prev", "ManagAI — business-automation SaaS (exit 2025)"),
-    ("Prev", "G-Bútor — e-commerce owner, 2019–2021"),
-    ("Stack", "Python · TypeScript · Next.js · Supabase · n8n"),
+    ("Role", "AI Engineer @ ZERO GROUP · Full-Stack · FDE"),
+    ("Motto", "AI prepares. Humans decide."),
+    ("Now", "4MA OS — 14 agents live in production"),
+    ("Prev", "ManagAI — business-management SaaS, sold 2025"),
+    ("Prev", "gbutor.hu — own online store, 2019–2021"),
+    ("Stack", "Python · TypeScript · Go · Next.js · Supabase"),
     ("Infra", "Docker · Kubernetes · Vercel · AWS/Azure/GCP"),
     ("LLMs", "Claude · DeepSeek · OpenRouter · Ollama/Qwen"),
-    ("Learning", "Go · Rust · Angular · cloud AI certs"),
+    ("Learning", "Rust · Angular · cloud AI certs"),
     ("Langs", "Hungarian · English · German · Greek"),
-    ("Base", "Hungary — remote / flexible hybrid"),
+    ("Base", "Debrecen, HU — remote / 1 day in Budapest"),
 ]
 RAMP = " .:-=+*#%@"
 
@@ -459,7 +459,121 @@ def make_orchestrator() -> None:
     write("orchestrator.svg", svg)
 
 
+# --------------------------------------------------------------------------
+# 4. Stat tiles (swing in, count up, shine) and link buttons
+# --------------------------------------------------------------------------
+TILES = [
+    ("tile-agents.svg", 14, "", "AGENTS IN PRODUCTION", "4MA OS at ZERO GROUP", 0.2),
+    ("tile-autonomy.svg", 95, "%", "ROUTINE TASKS AUTONOMOUS", "5% wait for a manager", 0.45),
+    ("tile-leads.svg", 131, "", "LEADS SINCE AUTOMATION", "Marketing Intelligence", 0.7),
+]
+
+
+def make_tile(fname: str, value: int, suffix: str, label: str, sub: str, delay: float) -> None:
+    W, H = 280, 150
+    frames = 22
+    count_start, count_dur = delay + 0.55, 1.1
+    nums = []
+    for k in range(frames + 1):
+        p = k / frames
+        v = round(value * (1 - (1 - p) ** 3))  # ease-out count
+        t = count_start + p * count_dur
+        if STATIC:
+            if k == frames:
+                nums.append(f'<text x="24" y="86" class="num">{v}<tspan class="suf">{suffix}</tspan></text>')
+            continue
+        timing = f'begin="{t:.3f}s"' + ("" if k == frames else f' dur="{count_dur / frames + 0.001:.3f}s"')
+        nums.append(
+            f'<text x="24" y="86" class="num" visibility="hidden">{v}<tspan class="suf">{suffix}</tspan>'
+            f'<set attributeName="visibility" to="visible" {timing}/></text>'
+        )
+    anim_css = "" if STATIC else f"""
+    .card{{opacity:0;transform-origin:20px 150px;animation:swing .9s cubic-bezier(.2,1.5,.4,1) {delay}s forwards}}
+    @keyframes swing{{0%{{opacity:0;transform:translateY(46px) rotate(-7deg)}}60%{{opacity:1}}100%{{opacity:1;transform:none}}}}
+    .shine{{animation:shine 5s ease-in-out {delay + 2:.2f}s infinite}}
+    @keyframes shine{{0%{{transform:translateX(-160px)}}30%,100%{{transform:translateX(440px)}}}}
+    .ring{{transform-origin:263px 15px;animation:ring 2.4s ease-out {delay + 1:.2f}s infinite}}
+    @keyframes ring{{0%{{transform:scale(.3);opacity:.9}}100%{{transform:scale(2.2);opacity:0}}}}
+    .arrow{{animation:nudge 1.8s ease-in-out infinite}}
+    @keyframes nudge{{50%{{transform:translate(3px,-3px)}}}}
+    """
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{value}{suffix} {escape(label.lower())}">
+  <title>{value}{suffix} {escape(label.lower())}</title>
+  <defs>
+    <linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".09"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <clipPath id="cc"><rect width="{W}" height="{H}" rx="10"/></clipPath>
+  </defs>
+  <style>
+    .num{{font:800 54px {SANS};fill:{CREAM};letter-spacing:1px}}
+    .suf{{fill:{RED}}}
+    .lbl{{font:700 11px {MONO};letter-spacing:1.8px;fill:{CREAM}}}
+    .sub{{font:500 11px {MONO};fill:{MUTED}}}
+    {anim_css}
+  </style>
+  <g class="card">
+    <g clip-path="url(#cc)">
+      <rect width="{W}" height="{H}" fill="{NAVY}"/>
+      <polygon points="{W - 46},0 {W},0 {W},46" fill="{RED}"/>
+      <rect class="shine" x="0" y="0" width="120" height="{H}" fill="url(#sh)" transform="skewX(-18)"/>
+      <rect x="0" y="{H - 3}" width="{W}" height="3" fill="{RED}" opacity=".8"/>
+    </g>
+    <rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="10" fill="none" stroke="{LINE}"/>
+    <circle class="ring" cx="263" cy="15" r="7" fill="none" stroke="{CREAM}" stroke-width="1.5" opacity="0"/>
+    <text x="264" y="20" text-anchor="middle" class="lbl arrow" style="fill:{NAVY};font-size:13px">↗</text>
+    {''.join(nums)}
+    <text x="24" y="112" class="lbl">{escape(label)}</text>
+    <text x="24" y="131" class="sub">{escape(sub)}</text>
+  </g>
+</svg>
+"""
+    write(fname, svg)
+
+
+BUTTONS = [
+    ("btn-portfolio.svg", "PORTFOLIO"),
+    ("btn-linkedin.svg", "LINKEDIN"),
+    ("btn-cv.svg", "CV · EN"),
+    ("btn-email.svg", "EMAIL"),
+]
+
+
+def make_button(fname: str, text: str, i: int) -> None:
+    W, H = 200, 44
+    anim_css = "" if STATIC else f"""
+    .b{{opacity:0;animation:pop .5s cubic-bezier(.2,1.4,.4,1) {0.15 + i * 0.12:.2f}s forwards}}
+    @keyframes pop{{from{{opacity:0;transform:translateY(8px)}}to{{opacity:1;transform:none}}}}
+    .sw{{animation:sw 4s ease-in-out {1.5 + i * 0.3:.2f}s infinite}}
+    @keyframes sw{{0%{{transform:translateX(-90px)}}35%,100%{{transform:translateX(300px)}}}}
+    """
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{escape(text.title())}">
+  <title>{escape(text.title())}</title>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <clipPath id="c"><polygon points="10,0 {W},0 {W},{H - 10} {W - 10},{H} 0,{H} 0,10"/></clipPath>
+  </defs>
+  <style>
+    .t{{font:700 13px {MONO};letter-spacing:2.5px;fill:{CREAM}}}
+    {anim_css}
+  </style>
+  <g class="b">
+    <g clip-path="url(#c)">
+      <rect width="{W}" height="{H}" fill="{NAVY}"/>
+      <rect width="5" height="{H}" fill="{RED}"/>
+      <rect class="sw" width="60" height="{H}" fill="url(#g)" transform="skewX(-20)"/>
+    </g>
+    <polygon points="10,.75 {W - .75},.75 {W - .75},{H - 10} {W - 10},{H - .75} .75,{H - .75} .75,10" fill="none" stroke="{RED}" stroke-width="1.5"/>
+    <text x="{W / 2 + 2}" y="27" text-anchor="middle" class="t">{escape(text)} <tspan fill="{RED}">↗</tspan></text>
+  </g>
+</svg>
+"""
+    write(fname, svg)
+
+
 if __name__ == "__main__":
     make_header()
     make_whoami()
     make_orchestrator()
+    for t in TILES:
+        make_tile(*t)
+    for i, (fname, text) in enumerate(BUTTONS):
+        make_button(fname, text, i)
