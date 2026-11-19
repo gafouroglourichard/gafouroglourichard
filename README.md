@@ -66,7 +66,7 @@
 
 <br>
 
-## In development — iso-flow previews
+## In development — 2026/27 projects
 
 <sub>Illustrations of what each app does, not screenshots.</sub>
 
@@ -120,7 +120,6 @@
 - [x] Sell ManagAI and hand it over to its new owner
 - [x] Put a 14-agent system into production at ZERO GROUP
 - [ ] Rebuild 4MA from scratch as a self-hosted SaaS with 4 pricing tiers
-- [ ] AWS / Azure / Google Cloud AI certifications
 - [ ] Launch a new AI venture for EU &amp; US markets in 2027
 
 > [!TIP]
