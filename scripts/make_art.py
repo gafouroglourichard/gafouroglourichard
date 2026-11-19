@@ -59,6 +59,91 @@ ROLES = [
 ]
 
 
+def spin_cube(cx: float, cy: float, half: float = 30.0, frames: int = 72, secs: float = 9.0) -> str:
+    """A flat-shaded 3D cube that turns forever (old-school game pickup).
+
+    Pre-computes the projected faces for every frame and animates them with SMIL,
+    because real 3D transforms don't survive inside a GitHub <img> SVG.
+    """
+    tilt = math.radians(-28)
+    light = (-0.45, -0.7, 0.55)
+    ln = math.sqrt(sum(c * c for c in light))
+    light = tuple(c / ln for c in light)
+    base_dark, base_lit = (58, 15, 24), (255, 82, 99)
+
+    verts = [(x, y, z) for x in (-1, 1) for y in (-1, 1) for z in (-1, 1)]
+    faces = [  # vertex indices (ccw seen from outside) + outward normal
+        ((0, 1, 3, 2), (-1, 0, 0)),
+        ((4, 6, 7, 5), (1, 0, 0)),
+        ((0, 4, 5, 1), (0, -1, 0)),
+        ((2, 3, 7, 6), (0, 1, 0)),
+        ((0, 2, 6, 4), (0, 0, -1)),
+        ((1, 5, 7, 3), (0, 0, 1)),
+    ]
+
+    def rot(v, a):
+        x, y, z = v
+        ca, sa = math.cos(a), math.sin(a)
+        x, z = x * ca + z * sa, -x * sa + z * ca  # yaw (around Y)
+        ct, st = math.cos(tilt), math.sin(tilt)
+        y, z = y * ct - z * st, y * st + z * ct  # pitch (around X)
+        return x, y, z
+
+    def hexc(c):
+        return "#%02x%02x%02x" % tuple(int(round(v)) for v in c)
+
+    series = [dict(pts=[], fill=[], op=[]) for _ in faces]
+    for f in range(frames + 1):
+        a = 2 * math.pi * f / frames + math.radians(30)
+        proj = [rot(v, a) for v in verts]
+        for i, (idx, n) in enumerate(faces):
+            nx, ny, nz = rot(n, a)
+            pts = " ".join(f"{cx + proj[k][0] * half:.1f},{cy + proj[k][1] * half:.1f}" for k in idx)
+            b = max(0.0, nx * light[0] + ny * light[1] + nz * light[2])
+            b = 0.18 + 0.82 * b
+            col = tuple(base_dark[j] + (base_lit[j] - base_dark[j]) * b for j in range(3))
+            series[i]["pts"].append(pts)
+            series[i]["fill"].append(hexc(col))
+            series[i]["op"].append("1" if nz > 0.02 else "0")
+
+    parts = []
+    for s in series:
+        if STATIC:
+            parts.append(
+                f'<polygon points="{s["pts"][8]}" fill="{s["fill"][8]}" opacity="{s["op"][8]}" '
+                f'stroke="{CREAM}" stroke-opacity=".55" stroke-width="1.2" stroke-linejoin="round"/>'
+            )
+            continue
+        dur = f'dur="{secs}s" repeatCount="indefinite"'
+        parts.append(
+            f'<polygon points="{s["pts"][0]}" fill="{s["fill"][0]}" opacity="{s["op"][0]}" '
+            f'stroke="{CREAM}" stroke-opacity=".55" stroke-width="1.2" stroke-linejoin="round">'
+            f'<animate attributeName="points" values="{";".join(s["pts"])}" {dur}/>'
+            f'<animate attributeName="fill" values="{";".join(s["fill"])}" {dur}/>'
+            f'<animate attributeName="opacity" values="{";".join(s["op"])}" calcMode="discrete" {dur}/>'
+            f"</polygon>"
+        )
+
+    bob = (
+        ""
+        if STATIC
+        else '<animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="2.6s" repeatCount="indefinite"/>'
+    )
+    shadow_anim = (
+        ""
+        if STATIC
+        else '<animate attributeName="rx" values="30;22;30" dur="2.6s" repeatCount="indefinite"/>'
+        '<animate attributeName="opacity" values=".35;.18;.35" dur="2.6s" repeatCount="indefinite"/>'
+    )
+    return (
+        f'<g>'
+        f'<circle cx="{cx}" cy="{cy}" r="64" fill="{RED}" opacity=".07"/>'
+        f'<ellipse cx="{cx}" cy="{cy + half * 1.75:.0f}" rx="30" ry="6" fill="#000" opacity=".35">{shadow_anim}</ellipse>'
+        f'<g>{bob}{"".join(parts)}</g>'
+        f'</g>'
+    )
+
+
 def make_header() -> None:
     W, H = 860, 230
     fs = 22
@@ -173,11 +258,7 @@ def make_header() -> None:
       <text x="{W - 40}" y="205" text-anchor="end" class="meta">HU · EN · DE · EL</text>
     </g>
 
-    <g opacity=".9">
-      <g class="spin"><rect x="725" y="67" width="90" height="90" fill="none" stroke="{RED}" stroke-width="1.5" stroke-dasharray="6 10" transform="rotate(45 770 112)"/></g>
-      <g class="spin2"><rect x="740" y="82" width="60" height="60" fill="none" stroke="{CREAM}" stroke-opacity=".5" stroke-width="1" transform="rotate(45 770 112)"/></g>
-      <polygon points="770,94 788,112 770,130 752,112" fill="{RED}" class="pulse"/>
-    </g>
+    {spin_cube(770, 112)}
   </g>
 </svg>
 """
