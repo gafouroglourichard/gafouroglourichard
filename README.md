@@ -4,61 +4,102 @@
 
 <br><br>
 
-<h3><code>richard@github ~ $ whoami</code></h3>
-<img src="./assets/whoami.svg" width="860" alt="neofetch-style card: AI Engineer, building the 4MA multi-agent platform" />
+<a href="https://richard-portfolio-2026-27.vercel.app/"><img src="./assets/btn-portfolio.svg" width="24%" alt="Portfolio" /></a>
+<a href="https://www.linkedin.com/in/richard-gafouroglou-040084389"><img src="./assets/btn-linkedin.svg" width="24%" alt="LinkedIn" /></a>
+<a href="https://richard-portfolio-2026-27.vercel.app/Gafouroglou_Richard_CV_AI_Engineer_EN.pdf"><img src="./assets/btn-cv.svg" width="24%" alt="CV (English)" /></a>
+<a href="mailto:gricsi12@icloud.com"><img src="./assets/btn-email.svg" width="24%" alt="Email" /></a>
 
 <br><br>
 
-<h3><code>richard@github ~ $ ./4ma --watch</code></h3>
-<img src="./assets/orchestrator.svg" width="860" alt="4MA orchestrator: a core routing tasks to 8 specialised agents" />
+<h3><code>richard@github ~ $ ./play portfolio.mp4</code></h3>
+
+<a href="https://richard-portfolio-2026-27.vercel.app/assets/07-FINAL-VIDEOS/portfolio-v4-en.mp4"><img src="./assets/media/portfolio-teaser.webp" width="860" alt="Teaser of my 3-minute portfolio video: real screens from the systems I built" /></a>
+
+<sub>Real screenshots, client data masked · click to watch the full 3-minute video</sub>
+
+<br><br>
+
+<a href="#4ma-os--agents--orchestrator"><img src="./assets/tile-agents.svg" width="32.5%" alt="14 agents in production" /></a>
+<a href="#4ma-os--agents--orchestrator"><img src="./assets/tile-autonomy.svg" width="32.5%" alt="95% of routine tasks run on their own" /></a>
+<a href="#modules-running-on-4ma"><img src="./assets/tile-leads.svg" width="32.5%" alt="131 leads since full automation" /></a>
+
+<br><br>
+
+<h3><code>richard@github ~ $ whoami</code></h3>
+<img src="./assets/whoami.svg" width="860" alt="neofetch-style card: AI Engineer at ZERO GROUP, building the 4MA multi-agent platform" />
 
 </div>
 
 <br>
 
-### `$ ls ./projects`
+## 4MA OS — agents & orchestrator
 
-| Project | What it does | Status |
-| :-- | :-- | :-- |
-| **4MA OS** | Self-hosted multi-agent business OS: a 14-agent orchestrator plus AutoSEO, MiniCRM and marketing analytics modules. Routine work runs on local Ollama/Qwen, hard tasks on Claude / DeepSeek. | 🟥 live testing |
-| **4MA AutoSEO** | AI auto-blogging and SEO / GEO / AEO engine for Hungarian SMEs | 🟧 nearly done |
-| **Grelio AI** | Hungarian-first multi-tenant CRM + AI assistant (Next.js 14, Supabase, Stripe) — built with a partner | 🟧 in development |
-| **Graffler** | Point your camera at something broken, get repair steps | 🟨 MVP |
-| **ManagAI** | Automated business-management SaaS with its own workflow builder | ✅ acquired 2025 |
-| **Marketing automation stack** | n8n pipelines on a VPS: daily AI video generation and social auto-publishing | ✅ running |
+`🟥 LIVE AT ZERO GROUP`
 
-<details>
-<summary><b>🧪 Hobby builds &amp; simulators</b></summary>
+*AI prepares. Humans decide.*
+
+**Models:** Ollama + Qwen locally for routine work · Claude Opus 5.5 / Sonnet 5.5 and DeepSeek V4 Pro for harder tasks and development
+
+- 14 domain agents working from shared rules and skills
+- Live flows: lead → contract, invoice → payment with a stop above the spending limit, ticket → resolution
+- 95% of routine tasks run on their own, 5% wait for manager approval
+- Manager corrections feed back into how the agents work — and the agents' look is inspired by Valorant
+
+<a href="https://richard-portfolio-2026-27.vercel.app/"><img src="./assets/media/4ma-dashboard.jpg" width="100%" alt="4MA agent studio dashboard: 14 agents, a weekly content plan and live activity" /></a>
+
+### Modules running on 4MA
+
+<table>
+<tr>
+<td valign="top"><img src="./assets/media/minicrm.webp" width="250" alt="MiniCRM demo" /><br><b>MiniCRM</b> · <code>LIVE</code><br><sub>Lead → finished project: automatic quotes, panel &amp; inverter selection from client data and a map, a solar–inverter–battery simulator in Go, GPS fleet management.</sub></td>
+<td valign="top"><img src="./assets/media/marketing-intelligence.webp" width="250" alt="Marketing Intelligence demo" /><br><b>Marketing Intelligence</b> · <code>LIVE</code><br><sub>Google Ads, Meta, GA4, Search Console and Tag Manager in one place. Replaced an agency's manual work — 131 leads since full automation.</sub></td>
+<td valign="top"><img src="./assets/media/autoseo.webp" width="250" alt="AutoSEO demo" /><br><b>AutoSEO</b> · <code>IN DEVELOPMENT</code><br><sub>A 30-day content plan from one URL: tech detection, competitors, Search Console &amp; Analytics, site health.</sub></td>
+</tr>
+</table>
+
 <br>
 
-- Warehouse / logistics app
-- Fleet management — GPS tracking, fuel consumption, trip time
-- Day-counter &amp; notifications for booking systems
-- Next up: cash-flow simulator (30 vs 60-day terms), production-line bottleneck finder, predictive maintenance from sensor data
+## More systems I built
 
-</details>
+<table>
+<tr>
+<td valign="top"><img src="./assets/media/knowledge-hub.webp" width="390" alt="ZERO Knowledge Hub demo" /><br><b>ZERO Knowledge Hub</b> · <code>LIVE</code><br><sub>Onboarding for new colleagues in sales and operations: learning cards, tests, real cases, mentor sign-off and measurable progress.</sub></td>
+<td valign="top"><img src="./assets/media/ticketing.webp" width="390" alt="AI ticketing system demo" /><br><b>AI ticketing system</b> · <code>LIVE</code><br><sub>Triages incoming tickets and suggests replies from document search (RAG, embeddings), with structured logging and error handling.</sub></td>
+</tr>
+<tr>
+<td valign="top"><img src="./assets/media/managai.webp" width="390" alt="ManagAI demo" /><br><b>ManagAI</b> · <code>SOLD 2025</code><br><sub>My own business-management SaaS. 3-month live pilot in five countries: 5 annual + 13 monthly subscribers, 41 trials. Sold on Acquire.com to a German buyer.</sub></td>
+<td valign="top"><img src="./assets/media/graffler.webp" width="390" alt="Graffler demo" /><br><b>Graffler</b> · <code>MVP</code><br><sub>Suggests troubleshooting and repair steps for broken objects and electronics from a camera image. Decision support, not automatic diagnosis.</sub></td>
+</tr>
+</table>
 
-<!--
-  DEMÓ VIDEÓK (iso-flow) — két lehetőség:
-
-  1) Lejátszó (kattintásra indul): a GitHub szerkesztőben húzd be az .mp4-et IDE
-     egy üres sorba. A GitHub feltölti, és beír egy
-     https://github.com/user-attachments/assets/... linket. Ha a link KÜLÖN SORBAN
-     áll, videólejátszóként jelenik meg. Utána töröld ki a kommentjelet a blokk körül.
-
-  2) Magától, végtelenítve induló animáció: GIF-ként / animált WebP-ként kell
-     berakni, pl.  <img src="./assets/demo-orchestrator.gif" width="860" />
-
-### `$ ./demo --play`
-
-<details open>
-<summary><b>▶ 4MA — iso-flow demo</b></summary>
 <br>
 
-https://github.com/user-attachments/assets/IDE-JON-A-VIDEO-LINKJE
+## In development — iso-flow previews
 
-</details>
--->
+<sub>Illustrations of what each app does, not screenshots.</sub>
+
+<table>
+<tr>
+<td valign="top"><img src="./assets/media/iso-warehouse.webp" width="390" alt="Warehouse and logistics app illustration" /><br><b>Warehouse &amp; logistics</b><br><sub>Inbound, barcode scanning, bin location and picking in one interface.</sub></td>
+<td valign="top"><img src="./assets/media/iso-fleet.webp" width="390" alt="Fleet management app illustration" /><br><b>Fleet management</b><br><sub>GPS-tracked vehicles with fuel consumption, trip time and other trip data.</sub></td>
+</tr>
+<tr>
+<td valign="top"><img src="./assets/media/iso-day-counter.webp" width="390" alt="Day counter and notifications illustration" /><br><b>Day counter &amp; notifications</b><br><sub>Bookings, reminders and confirmations for booking systems.</sub></td>
+<td valign="top"><img src="./assets/media/iso-cashflow.webp" width="390" alt="Cash-flow simulator illustration" /><br><b>Cash-flow simulator</b><br><sub>What happens when customers pay in 60 days instead of 30 — month by month.</sub></td>
+</tr>
+<tr>
+<td valign="top"><img src="./assets/media/iso-clinic.webp" width="390" alt="Healthcare booking illustration" /><br><b>Healthcare booking</b><br><sub>Fewer missed appointments through reminders; cancelled slots offered again.</sub></td>
+<td valign="top"><img src="./assets/media/iso-production-line.webp" width="390" alt="Production line bottleneck illustration" /><br><b>Production-line bottleneck</b><br><sub>Simulates each machine's throughput and finds the one slowing the line.</sub></td>
+</tr>
+<tr>
+<td valign="top"><img src="./assets/media/iso-maintenance.webp" width="390" alt="Predictive maintenance illustration" /><br><b>Predictive maintenance</b><br><sub>Estimates failures from vibration and temperature data and opens a ticket first.</sub></td>
+<td valign="top"><img src="./assets/media/iso-pharma.webp" width="390" alt="Medicine dispensing illustration" /><br><b>Medicine dispensing</b><br><sub>Scan the prescription, get the medicine with the right paperwork; doctor and patient notified.</sub></td>
+</tr>
+<tr>
+<td valign="top"><img src="./assets/media/iso-office.webp" width="390" alt="Office attendance and KPI tracker illustration" /><br><b>Office attendance &amp; KPIs</b><br><sub>Attendance, closed tasks, lead time and reviewed quality, measured.</sub></td>
+<td valign="top"><img src="./assets/media/iso-real-estate.webp" width="390" alt="Real-estate development tracker illustration" /><br><b>Real-estate tracker</b><br><sub>Construction progress, costs and status that everyone can follow.</sub></td>
+</tr>
+</table>
 
 <br>
 
@@ -66,12 +107,12 @@ https://github.com/user-attachments/assets/IDE-JON-A-VIDEO-LINKJE
 
 <h3><code>richard@github ~ $ cat stack.txt</code></h3>
 
-<img src="https://skillicons.dev/icons?i=python,ts,nextjs,react,tailwind,supabase,postgres,docker,kubernetes,vercel,aws,azure,gcp,linux&perline=7" alt="Tech stack" />
+<img src="https://skillicons.dev/icons?i=python,ts,go,nextjs,react,supabase,postgres,docker,kubernetes,vercel,aws,azure,gcp,linux&perline=7" alt="Tech stack" />
 
 <br><br>
 
 <sub>learning →</sub>&nbsp;
-<img src="https://skillicons.dev/icons?i=go,rust,angular" height="34" alt="Go, Rust, Angular" />
+<img src="https://skillicons.dev/icons?i=rust,angular" height="34" alt="Rust, Angular" />
 
 <br><br>
 
@@ -84,15 +125,15 @@ https://github.com/user-attachments/assets/IDE-JON-A-VIDEO-LINKJE
 
 ### `$ cat now.md`
 
-- [x] Ship ManagAI and hand it over to its new owner
-- [x] Combine orchestrator, MiniCRM, AutoSEO and analytics into one 4MA platform
+- [x] Sell ManagAI and hand it over to its new owner
+- [x] Put a 14-agent system into production at ZERO GROUP
 - [ ] Rebuild 4MA from scratch as a self-hosted SaaS with 4 pricing tiers
 - [ ] AWS / Azure / Google Cloud AI certifications
 - [ ] Launch a new AI venture for EU &amp; US markets in 2027
 
 > [!TIP]
-> **Open to work:** Medior AI Engineer · Forward Deployed Engineer roles — fully remote or flexible hybrid (Hungary: Budapest / Debrecen, or abroad).
+> **Open to work:** Medior AI Engineer · Forward Deployed Engineer roles — remote, with one day a week in Budapest if needed, and open to working abroad.
 
 <div align="center">
-<sub>Every animation on this page is a plain SVG generated by Python — no JavaScript, no third-party stats service. The heatmap re-syncs daily via GitHub Actions.</sub>
+<sub>Cards and banners are SVGs generated by Python; the demo loops are built from my portfolio videos by a GitHub Action. The heatmap re-syncs every morning.</sub>
 </div>
