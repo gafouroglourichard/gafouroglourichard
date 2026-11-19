@@ -28,7 +28,7 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            assets/snake.svg?color_snake=#17e8b0&color_dots=#3d4b5c,#7a2c38,#b3303f,#e53e4f,#ff4655
+            assets/snake.svg?color_snake=#7ee787&color_dots=#2d333b,#0e4429,#006d32,#26a641,#39d353
 
       - name: Commit the snake
         uses: stefanzweifel/git-auto-commit-action@v5
